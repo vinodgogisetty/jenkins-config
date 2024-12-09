@@ -1,0 +1,24 @@
+jenkins:
+  systemMessage: "Welcome to Jenkins configured as Code!"
+  numExecutors: 2
+  scm:
+    git:
+      installations:
+      - name: "Default"
+        home: "/usr/bin/git"
+  jobs:
+    - script: >
+        pipelineJob('FreeStyleJob') {
+            definition {
+                cpsScm {
+                    scm {
+                        git {
+                            remote {
+                                url('https://github.com/vinodgogisetty/jenkins-config')
+                            }
+                            branch('*/main')
+                        }
+                    }
+                }
+            }
+        }
