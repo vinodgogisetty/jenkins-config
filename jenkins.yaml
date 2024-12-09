@@ -14,7 +14,7 @@ jenkins:
                     scm {
                         git {
                             remote {
-                                url('https://github.com/vinodgogisetty/jenkins-config')
+                                url('https://github.com/vinodgogisetty/jenkins-config.git')
                             }
                             branch('*/main')
                         }
